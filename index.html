@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="css/style.css" />
     <link
       rel="icon"
       type="image/png"
@@ -16,39 +17,51 @@
   <body>
     <img class="logo" src="images/logo.svg" alt="Splitter logo" />
     <div class="card">
-      <label for="bill" class="card__label">Bill</label>
-      <input
-        class="card__input"
-        type="text"
-        name="bill"
-        id="bill"
-        placeholder="0"
-      />
-      <p class="card__label">Select Tip %</p>
-      <ul>
-        <li><button class="card__btn">5%</button></li>
-        <li><button class="card__btn">10%</button></li>
-        <li><button class="card__btn card__btn--active">15%</button></li>
-        <li><button class="card__btn">25%</button></li>
-        <li><button class="card__btn">50%</button></li>
-        <li>
+      <div class="main-card">
+        <div class="card__input-wrapper">
+          <label for="bill" class="card__label">Bill</label>
           <input
-            class="card__btn card__custom"
+            class="card__input"
             type="text"
-            name="custom"
-            id="custom"
-            placeholder="Custom"
+            name="bill"
+            id="bill"
+            placeholder="0"
           />
-        </li>
-      </ul>
-      <label for="nbOfPpl">Number of People</label>
-      <input
-        class="card__input"
-        type="text"
-        name="nbOfPpl"
-        id="nbOfPpl"
-        placeholder="0"
-      />
+          <img class="card__input-icon" src="images/icon-dollar.svg" alt="$" />
+        </div>
+        <p class="card__label">Select Tip %</p>
+        <div class="card__btn-grid">
+           <button class="card__btn">5%</button>
+           <button class="card__btn">10%</button>
+           <button class="card__btn card__btn--active">15%</button>
+           <button class="card__btn">25%</button>
+           <button class="card__btn">50%</button>
+           
+            <input
+              class="card__btn card__custom"
+              type="text"
+              name="custom"
+              id="custom"
+              placeholder="Custom"
+            />
+          </div>
+        </ul>
+        <div class="card__input-wrapper">
+          <label class="card__label" for="nbOfPpl">Number of People</label>
+          <input
+            class="card__input"
+            type="text"
+            name="nbOfPpl"
+            id="nbOfPpl"
+            placeholder="0"
+          />
+          <img
+            class="card__input-icon"
+            src="images/icon-person.svg"
+            alt="Person icon"
+          />
+        </div>
+      </div>
 
       <!-- dark card section -->
       <div class="card card--dark">

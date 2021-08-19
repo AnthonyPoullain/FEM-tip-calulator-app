@@ -1,0 +1,187 @@
+/* ===== FONTS ==== */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+/* ===== FONT PROPERTIES ===== */
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+:root {
+  --body-font-size: 2.4rem;
+  --label-font-size: 1.2rem;
+  --results-font-size: 3.6rem;
+  --sublabel-fontsize: 1rem;
+}
+
+/* ===== COLORS ===== */
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --dark-grayish-cyan2: hsl(184, 14%, 56%);
+  --body-background-color: hsl(185, 41%, 84%);
+  --light-grayish-cyan2: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+
+/* ==== BASE ==== */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  font-size: var(--body-font-size);
+  line-height: 1;
+  background-color: var(--body-background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+label {
+  display: block;
+}
+
+/* input[type="text"],
+::placeholder {
+  text-align: right;
+  font-family: inherit;
+  color: var(--dark-grayish-cyan2);
+  font-weight: 600;
+  font-size: var(--body-font-size);
+} */
+
+::placeholder {
+  color: var(--dark-grayish-cyan2);
+  font-weight: 600;
+  font-size: var(--body-font-size);
+}
+
+/* ===== UTILITY CLASSES ===== */
+.container {
+  margin: 0 1rem;
+  /* max-width: ; */
+}
+
+/* ===== MAIN STYLING ===== */
+.logo {
+  width: 8rem;
+  margin: 4rem 0;
+}
+
+.card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  box-shadow: 0px 15px 32px -20px rgba(0, 0, 0, 0.5);
+}
+
+.main-card {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+
+.card--dark {
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 1rem;
+  background-color: var(--very-dark-cyan);
+  box-shadow: none;
+}
+
+.card__label {
+  font-size: var(--label-font-size);
+  color: var(--dark-grayish-cyan);
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+.card__label--light {
+  color: var(--white);
+}
+
+.card__sublabel {
+  display: block;
+  font-size: var(--sublabel-fontsize);
+  color: var(--dark-grayish-cyan2);
+  margin: 0.75rem;
+}
+
+.card__input {
+  border: none;
+  background-color: var(--light-grayish-cyan2);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-align: right;
+  font-family: inherit;
+  color: var(--dark-grayish-cyan2);
+  font-weight: 600;
+  font-size: var(--body-font-size);
+  /* width: 100%; */
+}
+
+.card__input-wrapper {
+  position: relative;
+}
+
+.card__input-icon {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+}
+
+.card__result-wrapper {
+  display: flex;
+  align-content: space-between;
+}
+
+.card__result-number {
+  color: var(--strong-cyan);
+  font-weight: 700;
+  margin-left: 20rem;
+}
+
+.card__btn-grid {
+  overflow: hidden;
+  display: grid;
+  grid-template:
+    "a a a"
+    "a a a" / 33% 33% 33%;
+  gap: 1rem;
+}
+
+.card__btn {
+  padding: 1rem 1em;
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+  outline: none;
+  border: none;
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media screen and (min-width: 480px) {
+  body {
+    height: 100vh;
+  }
+  .logo {
+    margin-top: 0;
+  }
+}
