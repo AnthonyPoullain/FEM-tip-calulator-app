@@ -74,21 +74,21 @@ label {
 
 .card {
   background: var(--white);
-  padding: 2rem;
+  padding: 3rem;
   border-radius: 2rem;
   display: flex;
   flex-wrap: wrap;
   box-shadow: 0px 15px 32px -20px rgba(0, 0, 0, 0.5);
   gap: 2rem;
-  max-width: 600px;
+  max-width: 85rem;
 }
 
 .main-card {
-  width: 26rem;
+  width: 38rem;
 }
 
 .card--dark {
-  width: 26rem;
+  width: 38rem;
   flex-direction: column;
   justify-content: space-between;
   border-radius: 1rem;
@@ -146,7 +146,7 @@ label {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: -2rem 0;
+  /* padding: 0 1rem; */
 }
 
 .card__result-number {
@@ -175,6 +175,7 @@ label {
   border: none;
   font-family: inherit;
   font-size: var(--body-font-size);
+  cursor: pointer;
 }
 
 .card__custom {
@@ -183,6 +184,7 @@ label {
   padding: 1rem;
   font-size: inherit;
   font-family: inherit;
+  text-align: center;
 }
 
 .card__custom::placeholder {
@@ -190,17 +192,30 @@ label {
   font-family: "Space Mono", monospace;
 }
 
+.card__reset-btn {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: var(--body-font-size);
+  border: none;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+  width: 100%;
+  color: var(--very-dark-cyan);
+  background-color: var(--strong-cyan);
+}
+
 /* ===== MEDIA QUERIES ===== */
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 840px) {
   body {
     height: 100vh;
   }
   .logo {
-    margin-top: 0;
+    margin-top: 3rem;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 840px) {
   .main-card,
   .card--dark {
     width: 100%;
