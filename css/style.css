@@ -3,7 +3,7 @@
 
 /* ===== FONT PROPERTIES ===== */
 html {
-  font-size: 62.5%; /* 1rem = 10px */
+  font-size: 50%; /* 62.5% ==> 1rem = 10px */
 }
 
 :root {
@@ -16,6 +16,8 @@ html {
 /* ===== COLORS ===== */
 :root {
   --strong-cyan: hsl(172, 67%, 45%);
+  --highlight-color: hsl(172, 81%, 67%);
+
   --very-dark-cyan: hsl(183, 100%, 15%);
   --dark-grayish-cyan: hsl(186, 14%, 43%);
   --dark-grayish-cyan2: hsl(184, 14%, 56%);
@@ -58,6 +60,22 @@ label {
   color: var(--dark-grayish-cyan2);
   font-weight: 600;
   font-size: var(--body-font-size);
+}
+
+input[type="number"]:focus {
+  outline-color: var(--highlight-color);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 /* ===== UTILITY CLASSES ===== */
@@ -125,7 +143,7 @@ label {
   border-radius: 0.5rem;
   text-align: right;
   font-family: inherit;
-  color: var(--dark-grayish-cyan2);
+  color: var(--very-dark-cyan);
   font-weight: 600;
   font-size: var(--body-font-size);
   width: 100%;
@@ -139,7 +157,7 @@ label {
 .card__input-icon {
   position: absolute;
   left: 12px;
-  bottom: 14px;
+  bottom: 10px;
 }
 
 .card__result-wrapper {
@@ -171,16 +189,23 @@ label {
   color: var(--white);
   font-weight: 700;
   border-radius: 0.5rem;
-  outline: none;
+  /* outline: none; */
   border: none;
   font-family: inherit;
   font-size: var(--body-font-size);
   cursor: pointer;
 }
 
-.card__custom {
+.card__btn:hover,
+.card__btn:focus {
+  background-color: var(--strong-cyan);
+}
+
+.card__custom,
+.card__custom:hover,
+.card__custom:focus {
   background-color: var(--light-grayish-cyan2);
-  color: var(--dark-grayish-cyan2);
+  color: var(--very-dark-cyan);
   padding: 1rem;
   font-size: inherit;
   font-family: inherit;
@@ -196,6 +221,7 @@ label {
   cursor: pointer;
   font-family: inherit;
   font-size: var(--body-font-size);
+  font-weight: 700;
   border: none;
   padding: 0.5rem;
   margin: 0.5rem 0;
@@ -203,6 +229,10 @@ label {
   width: 100%;
   color: var(--very-dark-cyan);
   background-color: var(--strong-cyan);
+}
+
+.card__reset-btn:hover {
+  background-color: var(--highlight-color);
 }
 
 /* ===== MEDIA QUERIES ===== */
