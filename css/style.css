@@ -78,12 +78,6 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-/* ===== UTILITY CLASSES ===== */
-.container {
-  margin: 0 1rem;
-  /* max-width: ; */
-}
-
 /* ===== MAIN STYLING ===== */
 .logo {
   width: 8rem;
@@ -196,8 +190,11 @@ input[type="number"] {
   cursor: pointer;
 }
 
-.card__btn:hover,
-.card__btn:focus {
+.card__btn:hover {
+  background-color: var(--strong-cyan);
+}
+
+.card__btn--active {
   background-color: var(--strong-cyan);
 }
 
@@ -211,6 +208,10 @@ input[type="number"] {
   font-family: inherit;
   text-align: center;
   cursor: auto;
+}
+.card__custom--active {
+  background-color: var(--strong-cyan);
+  color: var(--white);
 }
 
 .card__custom::placeholder {

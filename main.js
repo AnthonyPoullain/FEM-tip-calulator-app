@@ -12,6 +12,7 @@ const resetBtn = document.querySelector("#reset");
 const tipAmountEl = document.querySelector("#tip-amount");
 const totalAmountEl = document.querySelector("#total-amount");
 
+// default values
 let bill = 0;
 let tip = 0;
 let nbOfPpl = 1;
@@ -19,6 +20,11 @@ let nbOfPpl = 1;
 const tipAmount = () => ((bill * (tip / 100)) / nbOfPpl).toFixed(2);
 const totalAmount = () =>
   (bill / nbOfPpl + (bill * (tip / 100)) / nbOfPpl).toFixed(2);
+
+const resetCustomField = function () {
+  customFieldEl.value = "";
+  customFieldEl.classList.remove("card__custom--active");
+};
 
 const displayResults = function () {
   tipAmountEl.innerText =
@@ -33,7 +39,7 @@ const displayResults = function () {
 
 const resetFields = function () {
   billInputEl.value = "";
-  customFieldEl.value = "";
+  resetCustomField();
   nbOfPplInputEl.value = "";
   bill = 0;
   tip = 0;
@@ -57,6 +63,13 @@ const getBtnPercentValue = function (btn) {
 
 percentBtns.forEach((btn) => {
   btn.addEventListener("click", function (e) {
+    resetCustomField();
+    percentBtns.forEach(
+      (button) =>
+        button.classList.contains("card__btn--active") &&
+        button.classList.remove("card__btn--active")
+    );
+    btn.classList.add("card__btn--active");
     tip = getBtnPercentValue(btn);
     console.log(tip);
     displayResults();
@@ -64,7 +77,14 @@ percentBtns.forEach((btn) => {
 });
 
 // ===== CUSTOM INPUT FIELD HANDLING ====
+
 customFieldEl.addEventListener("keypress", function (e) {
+  percentBtns.forEach(
+    (button) =>
+      button.classList.contains("card__btn--active") &&
+      button.classList.remove("card__btn--active")
+  );
+
   if (Number(e.key) || e.key === "0") {
     if (customFieldEl.value.length < 2) {
       tip = Number(customFieldEl.value + Number(e.key));
@@ -72,6 +92,10 @@ customFieldEl.addEventListener("keypress", function (e) {
       displayResults();
     }
   }
+  //   customFieldEl.value === "" &&
+  //   customFieldEl.classList.contains("card__btn--active")
+  //     ? customFieldEl.classList.remove("card__custom--active")
+  //     : customFieldEl.classList.add("card__custom--active");
 });
 
 // ===== NBOFPPL INPUT FIELD HANDLING =====
