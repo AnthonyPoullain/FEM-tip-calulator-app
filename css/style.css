@@ -210,6 +210,7 @@ input[type="number"] {
   font-size: inherit;
   font-family: inherit;
   text-align: center;
+  cursor: auto;
 }
 
 .card__custom::placeholder {

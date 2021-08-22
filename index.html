@@ -40,6 +40,8 @@
             <input
               class="card__btn card__custom"
               type="number"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              maxlength=2
               name="custom"
               id="custom"
               placeholder="Custom"
@@ -77,12 +79,13 @@
             <p class="card__label card__label--light">
               Total<span class="card__sublabel">/ person</span>
             </p>
-            <p class="card__result-number" id="total">$0.00</p>
+            <p class="card__result-number" id="total-amount">$0.00</p>
           </div>
         </div>
 
         <button class="card__reset-btn" id="reset">Reset</button>
       </div>
     </div>
+    <script src="main.js"></script>
   </body>
 </html>
